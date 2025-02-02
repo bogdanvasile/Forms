@@ -17,9 +17,8 @@
     <h2>Wender Utah Rating Scale (WURS) - ADHD Questionnaire</h2>
     <form action="https://formsubmit.co/bogs.vasile@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="New WURS ADHD Form Submission">
-        <input type="hidden" name="_cc" value="bogdan.vasile.pm@gmail.com">
+        <input type="hidden" name="_cc" value="ANOTHER_EMAIL_HERE"> 
         
-        <!-- Generate all 61 questions dynamically -->
         <script>
             const questions = [
                 "As a child, I was active, restless, and always on the go.",
@@ -85,17 +84,18 @@
                 "As a child, I was suspended or expelled."
             ];
             
-            questions.forEach((question, index) => {
-                document.write(`<label>${index + 1}. ${question}</label>`);
-                document.write(`<select name="q${index + 1}">
-                    <option value="0">Not at all or very slightly (0)</option>
-                    <option value="1">Mildly (1)</option>
-                    <option value="2">Moderately (2)</option>
-                    <option value="3">Quite a bit (3)</option>
-                    <option value="4">Very much (4)</option>
+            questions.forEach((question) => {
+                document.write(`<label>${question}</label>`);
+                document.write(`<select name="${question}">
+                    <option value="Not at all or very slightly (0)">Not at all or very slightly (0)</option>
+                    <option value="Mildly (1)">Mildly (1)</option>
+                    <option value="Moderately (2)">Moderately (2)</option>
+                    <option value="Quite a bit (3)">Quite a bit (3)</option>
+                    <option value="Very much (4)">Very much (4)</option>
                 </select>`);
             });
         </script>
+        
         <button type="submit">Submit</button>
     </form>
 </body>
