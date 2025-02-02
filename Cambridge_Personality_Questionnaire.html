@@ -15,8 +15,11 @@
 </head>
 <body>
     <h2>Revised Cambridge Personality Questionnaire</h2>
-    <form id="questionnaireForm" action="https://formspree.io/f/myzkjdwn" method="POST" onsubmit="return submitForm()">
+    <form id="questionnaireForm" action="https://formspree.io/f/myzkjdwn" method="POST">
         <input type="hidden" name="_subject" value="New Personality Questionnaire Submission">
+        <div id="questionsContainer"></div>
+        <button type="submit">Submit</button>
+    </form>
         
         <script>
             const questions = [
@@ -98,37 +101,27 @@
               
             ]; // Add all 75 questions
             
-            const choices = ["Strongly Agree", "Slightly Agree", "Slightly Disagree", "Strongly Disagree"];
+                   const choices = ["Strongly Agree", "Slightly Agree", "Slightly Disagree", "Strongly Disagree"];
+        
+        let questionsContainer = document.getElementById("questionsContainer");
+        questions.forEach((question, index) => {
+            let questionLabel = document.createElement("label");
+            questionLabel.textContent = question;
             
-            let formContent = "";
-            questions.forEach((question, index) => {
-                formContent += `<label>${question}</label>`;
-                formContent += `<select name="question_${index + 1}">
-                    ${choices.map(choice => `<option value='${choice}'>${choice}</option>`).join('')}
-                </select><br>`;
+            let selectElement = document.createElement("select");
+            selectElement.name = `question_${index + 1}`;
+            
+            choices.forEach(choice => {
+                let option = document.createElement("option");
+                option.value = choice;
+                option.textContent = choice;
+                selectElement.appendChild(option);
             });
             
-            document.write(formContent);
-        </script>
-        
-        <button type="submit">Submit</button>
-    </form>
-
-    <script>
-        function submitForm() {
-            let form = document.getElementById("questionnaireForm");
-            let formData = new FormData(form);
-            
-            let responseSummary = "";
-            for (let pair of formData.entries()) {
-                if (pair[0] !== "_subject") {
-                    responseSummary += `<p><strong>${pair[0].replace('question_', 'Q')}: </strong> ${pair[1]}</p>`;
-                }
-            }
-            
-            alert("Your responses have been recorded.\n" + responseSummary);
-            return true; // Allow form submission
-        }
+            questionsContainer.appendChild(questionLabel);
+            questionsContainer.appendChild(selectElement);
+            questionsContainer.appendChild(document.createElement("br"));
+        });
     </script>
 </body>
 </html>
