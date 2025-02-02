@@ -130,12 +130,17 @@
             
             const choices = ["Yes", "No"];
             
-           questions.forEach((question, index) => {
-    document.write(`<label>${index + 1}. ${question}</label>`);
-    document.write(`<select name="question_${index + 1}">
-        ${choices.map(choice => `<option value='${choice}'>${choice}</option>`).join('')}
-    </select>`);
-        });
+ questions.forEach((question, index) => {
+        // Create a label with question number and text
+        document.write(`<label for="question_${index + 1}">${index + 1}. ${question}</label>`);
+
+        // Create a dropdown with Yes/No choices
+        document.write(`
+            <select name="question_${index + 1}" id="question_${index + 1}">
+                ${choices.map(choice => `<option value="${question}: ${choice}">${choice}</option>`).join('')}
+            </select>
+        `);
+    });
         </script>
         
         <button type="submit">Submit</button>
