@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empathy Quotient (EQ) Questionnaire</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 20px; }
+        h2 { text-align: center; }
+        label { font-weight: bold; display: block; margin-top: 10px; }
+        select { width: 100%; padding: 5px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px; width: 100%; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h2>Empathy Quotient (EQ) Questionnaire</h2>
+    <form action="https://formspree.io/f/myzkjdwn" method="POST">
+        <input type="hidden" name="_subject" value="New EQ Form Submission">
+        
+        <script>
+            const questions = [
+                "I can easily tell if someone else wants to enter a conversation.",
+                "I find it difficult to explain to others things that I understand easily, when they don't understand it first time.",
+                "I really enjoy caring for other people.",
+                "I find it hard to know what to do in a social situation.",
+                "People often tell me that I went too far in driving my point home in a discussion.",
+                "It doesn't bother me too much if I am late meeting a friend.",
+                "Friendships and relationships are just too difficult, so I tend not to bother with them.",
+                "I often find it difficult to judge if something is rude or polite.",
+                "In a conversation, I tend to focus on my own thoughts rather than on what my listener might be thinking.",
+                "When I was a child, I enjoyed cutting up worms to see what would happen.",
+                "I can pick up quickly if someone says one thing but means another.",
+                "It is hard for me to see why some things upset people so much.",
+                "I find it easy to put myself in somebody else's shoes.",
+                "I am good at predicting how someone will feel.",
+                "I am quick to spot when someone in a group is feeling awkward or uncomfortable.",
+                "If I say something that someone else is offended by, I think that that's their problem, not mine.",
+                "If anyone asked me if I liked their haircut, I would reply truthfully, even if I didn't like it.",
+                "I can't always see why someone should have felt offended by a remark.",
+                "Seeing people cry doesn't really upset me.",
+                "I am very blunt, which some people take to be rudeness, even though this is unintentional.",
+                "I don’t tend to find social situations confusing.",
+                "Other people tell me I am good at understanding how they are feeling and what they are thinking.",
+                "When I talk to people, I tend to talk about their experiences rather than my own.",
+                "It upsets me to see an animal in pain.",
+                "I am able to make decisions without being influenced by people's feelings.",
+                "I can easily tell if someone else is interested or bored with what I am saying.",
+                "I get upset if I see people suffering on news programmes.",
+                "Friends usually talk to me about their problems as they say that I am very understanding.",
+                "I can sense if I am intruding, even if the other person doesn't tell me.",
+                "People sometimes tell me that I have gone too far with teasing.",
+                "Other people often say that I am insensitive, though I don’t always see why.",
+                "If I see a stranger in a group, I think that it is up to them to make an effort to join in.",
+                "I usually stay emotionally detached when watching a film.",
+                "I can tune into how someone else feels rapidly and intuitively.",
+                "I can easily work out what another person might want to talk about.",
+                "I can tell if someone is masking their true emotion.",
+                "I don't consciously work out the rules of social situations.",
+                "I am good at predicting what someone will do.",
+                "I tend to get emotionally involved with a friend's problems.",
+                "I can usually appreciate the other person's viewpoint, even if I don't agree with it."
+            ];
+            
+            const choices = [
+                "Strongly Agree",
+                "Slightly Agree",
+                "Slightly Disagree",
+                "Strongly Disagree"
+            ];
+            
+            questions.forEach((question) => {
+                document.write(`<label>${question}</label>`);
+                document.write(`<select name="${question}">
+                    ${choices.map(choice => `<option value='${choice}'>${choice}</option>`).join('')}
+                </select>`);
+            });
+        </script>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
