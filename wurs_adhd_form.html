@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WURS ADHD Questionnaire</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+        h2 { text-align: center; }
+        label { font-weight: bold; display: block; margin-top: 10px; }
+        select { width: 100%; padding: 5px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px; width: 100%; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h2>Wender Utah Rating Scale (WURS) - ADHD Questionnaire</h2>
+    <form action="https://formsubmit.co/bogs.vasile@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New WURS ADHD Form Submission">
+        <input type="hidden" name="_cc" value="bogdan.vasile.pm@gmail.com">
+        
+        <!-- Generate all 61 questions dynamically -->
+        <script>
+            const questions = [
+                "As a child, I was active, restless, and always on the go.",
+                "As a child, I was afraid of things.",
+                "As a child, I had concentration problems and was easily distracted.",
+                "As a child, I was anxious and worried a lot.",
+                "As a child, I was nervous and fidgety.",
+                "As a child, I was inattentive and daydreamed often.",
+                "As a child, I had a short temper and got angry quickly.",
+                "As a child, I was shy and sensitive.",
+                "As a child, I had temper outbursts and tantrums.",
+                "As a child, I had trouble following through on things and finishing tasks.",
+                "As a child, I was stubborn and strong-willed.",
+                "As a child, I felt sad, blue, or depressed.",
+                "As a child, I was incautious, took risks, and played pranks.",
+                "As a child, I did not enjoy things and was dissatisfied with life.",
+                "As a child, I was disobedient with my parents, rebellious, or sassy.",
+                "As a child, I had a low opinion of myself.",
+                "As a child, I was irritable.",
+                "As a child, I was outgoing, friendly, and enjoyed company.",
+                "As a child, I was sloppy and disorganized.",
+                "As a child, I was moody and had ups and downs.",
+                "As a child, I was often angry.",
+                "As a child, I had many friends and was popular.",
+                "As a child, I was well-organized, tidy, and neat.",
+                "As a child, I acted without thinking and was impulsive.",
+                "As a child, I had a tendency to be immature.",
+                "As a child, I often felt guilty and regretful.",
+                "As a child, I would lose control of myself.",
+                "As a child, I had a tendency to act irrationally.",
+                "As a child, I was unpopular and had trouble keeping friends.",
+                "As a child, I was poorly coordinated and did not participate in sports.",
+                "As a child, I was afraid of losing control of myself.",
+                "As a child, I was well-coordinated and was picked first in games.",
+                "(For women only) As a child, I was tomboyish.",
+                "As a child, I ran away from home.",
+                "As a child, I got into fights.",
+                "As a child, I teased other children.",
+                "As a child, I was a leader and bossy.",
+                "As a child, I had difficulty waking up.",
+                "As a child, I was a follower and led around too much.",
+                "As a child, I had trouble seeing things from others’ points of view.",
+                "As a child, I had trouble with authorities, school, or the principal’s office.",
+                "As a child, I had trouble with the police, got booked, or convicted.",
+                "As a child, I had frequent headaches.",
+                "As a child, I had frequent stomachaches.",
+                "As a child, I had constipation.",
+                "As a child, I had diarrhea.",
+                "As a child, I had food allergies.",
+                "As a child, I had other allergies.",
+                "As a child, I wet the bed.",
+                "As a child, I was a good student and learned quickly.",
+                "As a child, I was a poor student and a slow learner.",
+                "As a child, I was slow in learning to read.",
+                "As a child, I was a slow reader.",
+                "As a child, I had trouble reversing letters.",
+                "As a child, I had problems with spelling.",
+                "As a child, I had trouble with mathematics or numbers.",
+                "As a child, I had bad handwriting.",
+                "As a child, I could read well but never really enjoyed it.",
+                "As a child, I did not achieve up to my potential.",
+                "As a child, I had to repeat grades.",
+                "As a child, I was suspended or expelled."
+            ];
+            
+            questions.forEach((question, index) => {
+                document.write(`<label>${index + 1}. ${question}</label>`);
+                document.write(`<select name="q${index + 1}">
+                    <option value="0">Not at all or very slightly (0)</option>
+                    <option value="1">Mildly (1)</option>
+                    <option value="2">Moderately (2)</option>
+                    <option value="3">Quite a bit (3)</option>
+                    <option value="4">Very much (4)</option>
+                </select>`);
+            });
+        </script>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
