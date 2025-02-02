@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCID-5 Questionnaire</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 20px; }
+        h2 { text-align: center; }
+        label { font-weight: bold; display: block; margin-top: 10px; }
+        select { width: 100%; padding: 5px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px; width: 100%; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h2>SCID-5 Questionnaire</h2>
+    <form action="https://formspree.io/f/myzkjdwn" method="POST">
+        <input type="hidden" name="_subject" value="New SCID-5 Form Submission">
+        
+        <script>
+            const questions = [
+                "Have you avoided jobs or tasks that involved having to deal with a lot of people?",
+"Do you avoid making friends with people unless you are certain they will like you?",
+"Do you find it hard to be open even with people you are close to?",
+"Do you often worry about being criticized or rejected in social situations?",
+"Are you usually quiet when you meet new people?",
+"Do you believe that you're not as good, as smart, or as attractive as most other people?",
+"Are you afraid to do things that might be challenging or to try anything new?",
+"Is it hard for you to make everyday decisions, like what to wear or what to order in a restaurant, without advice and reassurance from others?",
+"Do you depend on other people to handle important areas of your life, such as finances, child care, or living arrangements?",
+"Do you have trouble disagreeing with people even when you think they are wrong?",
+"Do you find it hard to start projects or do things on your own?",
+"Is it so important to you to be taken care of by others that you are willing to do unpleasant or unreasonable things for them?",
+"Do you usually feel uncomfortable when you are by yourself?",
+"When a close relationship ends, do you feel you immediately have to find someone else to take care of you?",
+"Do you worry a lot about being left alone to take care of yourself?",
+"Are you the kind of person who spends a lot of time focusing on details, order, or organization, or making lists and schedules?",
+"Do you have trouble finishing things because you spend so much time trying to get them exactly right?",
+"Are you very devoted to your work or to being productive?",
+"Do you have very high standards about what is right and what is wrong?",
+"Do you have trouble throwing things out because they might come in handy someday?",
+"Is it hard for you to work with other people or ask others to do things if they don't agree to do things exactly the way you want?",
+"Is it hard for you to spend money on yourself and other people?",
+"Once you've made plans, is it hard for you to make changes?",
+"Have other people said that you are stubborn?",
+"Do you often get the feeling that people are using you, hurting you, or lying to you?",
+"Are you a very private person who rarely confides in other people?",
+"Do you find that it is best not to let other people know much about you because they will use it against you?",
+"Do you often feel that people are threatening or insulting you by the things they say or do?",
+"Are you the kind of person who holds grudges or takes a long time to forgive people who have insulted or slighted you?",
+"Are there a lot of people you can't forgive because they did or said something to you a long time ago?",
+"Do you often get angry or lash out when someone criticizes or insults you in some way?",
+"Have you sometimes suspected that your spouse or partner has been unfaithful?",
+"When you are out in public and see people talking, do you often feel that they are talking about you?",
+"When you are around people, do you often get the feeling that you are being watched or stared at?",
+"Do you often get the feeling that the words to a song or something in a movie or on TV has a special meaning for you in particular?",
+"Are you a superstitious person?",
+"Have you ever felt that you could make things happen just by making a wish or thinking about them?",
+"Have you had personal experiences with the supernatural?",
+"Do you believe that you have a sixth sense that allows you to know and predict things?",
+"Do you often have the feeling that everything is unreal, that you are detached from your body or mind, or that you are an outside observer of your own thoughts or movements?",
+"Do you often see things that other people don't see?",
+"Do you often hear a voice softly speaking your name?",
+"Have you had the sense that some person or force is around you, even though you cannot see anyone?",
+"Are there very few people who you're really close to outside of your immediate family?",
+"Do you often feel nervous when you are around people you don't know very well?",
+"Is it NOT important to you to have friends or romantic relationships or to be involved with your family?",
+"Would you almost always rather do things alone than with other people?",
+"Do you have little or no interest in having sexual experiences with another person?",
+"Are there really very few things that give you pleasure?",
+"Does it not matter to you what people think of you?",
+"Do you rarely have strong feelings, like being very angry or feeling joyful?",
+"Do you like being the center of attention?",
+"Do you tend to flirt a lot?",
+"Do you often find yourself coming on to people?",
+"Do you like to draw attention to yourself by the way you dress or look?",
+"Do you tend to be very dramatic in your actions and speech?",
+"Are you more emotional than most other people, for example, sobbing when you hear a sad story?",
+"Do you often change your mind about things depending on the people you're with or what you have just read or seen on TV?",
+"Do you feel that you are good friends even with people who provide a service, like your plumber, your car mechanic, and your doctor?",
+"Are you more important, more talented, or more successful than most other people?",
+"Have people told you that you have too high an opinion of yourself?",
+"Do you think a lot about the power, success, or recognition that you expect to be yours someday?",
+"Do you think a lot about the perfect romance that wil be yours someday?",
+"When you have a problem, do you almost always insist on seeing the top person?",
+"Do you try to spend time with people who are important or influential?",
+"Is it important to you that people pay attention to you or admire you in some way?",
+"Do you feel that you are the kind of person who deserves special treatment, or that other people should automatically do what you want?",
+"Do you often have to put your needs above other people's?",
+"Have others complained that you take advantage of people?",
+"Do you generally feel that other people's needs or feelings are really not your problem?",
+"Do you often find other people's problems to be boring?",
+"Have people complained to you that you don't listen to them or care about their feelings?",
+"When you see someone who is successful, do you feel that you deserve it more than they do?",
+"Do you feel that others are often envious of you?",
+"Do you find that there are very few people who are worth your time and attention?",
+"Have other people complained that you act too high and mighty or arrogant?",
+"Have you become frantic when you thought that someone you really cared about was going to leave you?",
+"Do relationships with people you really care about have lots of extreme ups and downs?",
+"Does your sense of who you are often change dramatically?",
+"Are you different with different people or in different situations, so that you sometimes don't know who you really are?",
+"Have there been lots of sudden changes in your goals, career plans, religious beliefs, and so on?",
+"Have there been lots of sudden changes in the kinds of friends you have or in your sexual identity?",
+"Have you often done things impulsively?",
+"Have you tried to hurt or kill yourself or threatened to do so?",
+"Have you ever cut, burned, or scratched yourself on purpose?",
+"Does your mood often change in a single day, based on what's going on in your life?",
+"Do you often feel empty inside?",
+"Do you often have temper outbursts or get so angry that you lose control?",
+"Do you hit people or throw things when you get angry?",
+"Do even little things get you very angry?",
+"When you get very upset, do you get suspicious of other people or feel disconnected from your body or that things are unreal?",
+"Before you were 15, did you bully, threaten, or scare other kids?",
+"Before you were 15, did you start fights?",
+"Before you were 15, did you hurt or threaten someone with a weapon, like a bat, brick, broken bottle, a knife, or a gun?",
+"Before you were 15, did you do cruel things to someone that caused him or her physical pain or suffering?",
+"Before you were 15, did you hurt animals on purpose?",
+"Before you were 15, did you mug, rob, or forcibly take something from someone by threatening him or her?",
+"Before you were 15, did you force someone to do something sexual?",
+"Before you were 15, did you set fires?",
+"Before you were 15, did you deliberately destroy things that weren't yours?",
+"Before you were 15, did you break into houses, other buildings, or cars?",
+"Before you were 15, did you lie a lot or con other people to get something you wanted or to get out of doing something?",
+"Before you were 15, did you sometimes shoplift, steal something, or forge someone's signature for money?",
+"Before you were 15, did you run away and stay away overnight?",
+"Before you were 13, did you often stay out very late, long after the time you were supposed to be home?",
+"Before you were 13, did you often skip school?"
+            ];
+            
+            const choices = ["Yes", "No"];
+            
+           questions.forEach((question, index) => {
+    document.write(`<label>${index + 1}. ${question}</label>`);
+    document.write(`<select name="question_${index + 1}">
+        ${choices.map(choice => `<option value='${choice}'>${choice}</option>`).join('')}
+    </select>`);
+        });
+        </script>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
