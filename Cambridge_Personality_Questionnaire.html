@@ -101,7 +101,7 @@
               
             ]; // Add all 75 questions
             
-                   const choices = ["Strongly Agree", "Slightly Agree", "Slightly Disagree", "Strongly Disagree"];
+        const choices = ["Strongly Agree", "Slightly Agree", "Slightly Disagree", "Strongly Disagree"];
         
         let questionsContainer = document.getElementById("questionsContainer");
         questions.forEach((question, index) => {
@@ -109,7 +109,7 @@
             questionLabel.textContent = question;
             
             let selectElement = document.createElement("select");
-            selectElement.name = `question_${index + 1}`;
+            selectElement.name = question; // Use full question text as name
             
             choices.forEach(choice => {
                 let option = document.createElement("option");
