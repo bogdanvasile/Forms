@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beck's Depression Inventory (BDI)</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 20px; }
+        h2 { text-align: center; }
+        label { font-weight: bold; display: block; margin-top: 10px; }
+        select { width: 100%; padding: 5px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px; width: 100%; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h2>Beck's Depression Inventory (BDI)</h2>
+    <form action="https://formspree.io/f/myzkjdwn" method="POST">
+        <input type="hidden" name="_subject" value="New BDI Form Submission">
+        
+        <script>
+            const questions = [
+                "I do not feel sad.",
+                "I am not particularly discouraged about the future.",
+                "I do not feel like a failure.",
+                "I get as much satisfaction out of things as I used to.",
+                "I don't feel particularly guilty.",
+                "I don't feel I am being punished.",
+                "I don't feel disappointed in myself.",
+                "I don't feel I am any worse than anybody else.",
+                "I don't have any thoughts of killing myself.",
+                "I don't cry any more than usual.",
+                "I am no more irritated by things than I ever was.",
+                "I have not lost interest in other people.",
+                "I make decisions about as well as I ever could.",
+                "I don't feel that I look any worse than I used to.",
+                "I can work about as well as before.",
+                "I can sleep as well as usual.",
+                "I don't get more tired than usual.",
+                "My appetite is no worse than usual.",
+                "I haven't lost much weight, if any, lately.",
+                "I am no more worried about my health than usual.",
+                "I have not noticed any recent change in my interest in sex."
+            ];
+            
+            const choices = [
+                "0 - No change",
+                "1 - Mild",
+                "2 - Moderate",
+                "3 - Severe"
+            ];
+            
+            questions.forEach((question) => {
+                document.write(`<label>${question}</label>`);
+                document.write(`<select name="${question}">
+                    ${choices.map(choice => `<option value='${choice}'>${choice}</option>`).join('')}
+                </select>`);
+            });
+        </script>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
